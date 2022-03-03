@@ -42,11 +42,10 @@ else if ($action == 'list_categories'){
 else if ($action == 'delete_item'){
     //Get the IDs and delete
     $itemnum = $_POST['itemnum'];
-    $categoryid = $_POST['categoryid'];
     delete_item($itemnum);
     
     //Display The itemlist page for the current category
-    header("Location: .?categoryid=$categoryid");
+    header("Location: .?itemnum=$itemnum");
     
 }  
 else if($action == 'delete_category'){
@@ -54,12 +53,13 @@ else if($action == 'delete_category'){
     $categoryid = $_POST['categoryid'];
     delete_category($categoryid);
     
-    include ("./view/category_list.php");
+    header("Location: .?category=$categoryid");
 
 } 
 else if ($action == 'show_add_form'){
     $categories = get_categories();
-    include ("./view/item_add.php");
+
+   include ("./view/item_add.php");
 }
 else if ($action == 'add_item'){
 
@@ -73,7 +73,7 @@ else {
     
     
     //Display the item list page for the current category
-    header("Location: .?categoryid=$categoryid");
+    header("Location: .?itemnum=$itemnum");
 }
 }
 else if ($action == 'show_category_form'){

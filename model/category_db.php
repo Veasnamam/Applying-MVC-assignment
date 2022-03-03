@@ -3,17 +3,17 @@ function get_categories(){
     global $db;
     $query = "SELECT * FROM categories 
               ORDER BY categoryID";
-    $categories = $db->query($query);
+    $categories= $db->query($query);
     return $categories;
 }
 
 function get_category_name($categoryid){
     global $db;
     $query = "SELECT * FROM categories
-              WHERE categoryID = :categoryid";
-    $category = $db->prepare($query);
-    $category->bindValue(':categoryid', $categoryid);
+              WHERE categoryID = '$categoryid'";
+    $category = $db->query($query);
     $category = $category->fetch();
+    return $category;
 }
 function add_category($categoryid, $category_name){
     global $db;

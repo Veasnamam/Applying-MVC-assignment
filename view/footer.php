@@ -1,4 +1,5 @@
         <div id="footer">
+            <hr>
             <p>
                 &copy; <?php echo date ("Y"); ?>
                 My ToDo List.

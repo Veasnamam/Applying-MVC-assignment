@@ -18,6 +18,17 @@
     color:black;
     resize: vertical;
   }
+  input[type=submit]{
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 50%;
+  }
+  input[type=submit]:hover{
+    background-color: #4586a0;
+  }
   select{
     width: 50%;
     padding: 10px;
@@ -47,7 +58,10 @@
   }
     
   button:hover {
-    background-color: #45a049;
+    background-color: #4586a0;
+  }
+  a:hover{
+    color:#3e04aa;
   }
     
   .container {
@@ -90,6 +104,9 @@
     content: "";
     display: table;
     clear: both;
+  }
+  #footer{
+    position: relative;
   }
     
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */

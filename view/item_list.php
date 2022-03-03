@@ -6,7 +6,9 @@
             <th>Description</th>
             <th>Category</th>
         </tr>
-        <?php foreach($items as $item): ?>
+        <?php if(is_array($items) || is_object($items))
+        {
+            foreach($items as $item): ?>
         <tr>
             <td><?php echo $item['Title']?></td>
             <td><?php echo $item['Description']?></td>
@@ -19,7 +21,7 @@
                 <input type="submit" value="Delete"/>
             </form></td>
         </tr>
-        <?php endforeach; ?>
+        <?php endforeach; } ?>
     </table>
     <p> <a href="?action=show_add_form">Add ToDo Item</a></p>
     <p><a href="?action=show_category_form">Add Category</a></p>
